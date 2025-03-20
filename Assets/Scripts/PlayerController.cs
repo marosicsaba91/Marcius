@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 direction = new(hInput, 0, vInput);
         direction.Normalize();
+        // Comment
 
         Vector3 velocity = direction * speed;
 
