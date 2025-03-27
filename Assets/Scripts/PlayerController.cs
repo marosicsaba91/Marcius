@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     // Írj függvényt ami egy tetszõleges számot emel egy tetszõleges egész hatványra!
 
+
     float Pow(float baseNumber, int power)  // Két paraméteres függvény: alap és kitevõ
     {
         // Annyiszor vesszük az alap számot szorzótényezõnek, ahányadik hatványra emeljük
