@@ -3,33 +3,34 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed = 5; // Sebesség változó
+    [SerializeField] float angularVelocity = 180; // Szögsebesség
+    [SerializeField] Transform cameraTransform;
 
     void Update()
     {
         float hInput = Input.GetAxisRaw("Horizontal"); // Vízszintes bemenet
         float vInput = Input.GetAxisRaw("Vertical"); // Függõleges bemenet
 
-        Vector3 direction = new(hInput, 0, vInput); // Irány vektor
+        Vector3 cameraRight = cameraTransform.right * hInput;
+        Vector3 cameraForward = cameraTransform.forward * vInput;
+        cameraForward.y = 0;
+        cameraForward.Normalize();
+        Vector3 direction = cameraRight + cameraForward;
+
+        // Vector3 direction = new(hInput, 0, vInput); // Irány vektor
+
         direction.Normalize(); // Irány normalizálása
-        // Komment
+                               // Komment
 
-        Vector3 velocity = direction * speed; // Sebesség vektor
-
-        transform.position += velocity * Time.deltaTime; // Pozíció frissítése
-    }
-
-    // Írj függvényt ami egy tetszõleges számot emel egy tetszõleges egész hatványra!
+        float stepLength = speed * Time.deltaTime;
+        transform.position += direction * stepLength; // Pozíció frissítése
 
 
-    float Pow(float baseNumber, int power)  // Két paraméteres függvény: alap és kitevõ
-    {
-        // Annyiszor vesszük az alap számot szorzótényezõnek, ahányadik hatványra emeljük
-
-        float result = 1; // Eredmény változó: 1-gyel kezdünk és a hatványozás során ezt módosítjuk
-        for (int i = 0; i < power; i++) // Annyiszor szorozzuk az alap számmal, ahányadik hatványra emeljük
+        if (direction != Vector3.zero)
         {
-            result *= baseNumber; // Minden ciklusban megszorozzuk az eredményt az alap számmal
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, angularVelocity* Time.deltaTime);
         }
-        return result; // Eredmény visszaadása
+
     }
 }
