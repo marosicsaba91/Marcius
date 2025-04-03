@@ -13,7 +13,6 @@ public class Damager : MonoBehaviour
         if (healthObject != null)
         {
             healthObject.Damage(damage);
-
         }
     }
 }
