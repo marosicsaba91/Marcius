@@ -41,6 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1052484125
+    locked: 0
+  - name: Gameplay
+    uniqueID: 2047258041
+    locked: 0
+  - name: Forground
+    uniqueID: 4250851371
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1
