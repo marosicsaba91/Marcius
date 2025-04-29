@@ -119,6 +119,91 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &362430599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 362430601}
+  - component: {fileID: 362430600}
+  m_Layer: 0
+  m_Name: AsteroidManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &362430600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362430599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6299f804fa360a459de4aa1f09d4b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startAsteroids:
+  - {fileID: 1571407391932628529, guid: d5023ca544280464cb684e9968c1e5cf, type: 3}
+  - {fileID: 3052122044018434631, guid: 39c33ad0d896c47419042edcc6794961, type: 3}
+  - {fileID: 1519246763636566026, guid: c731037274612bf4989a40fa19febb67, type: 3}
+  startAsteroidCount: 5
+  colliderDelay: 1
+  minStartSpeed: 10
+  maxStartSpeed: 20
+  maxAngularSpeed: 180
+  randomSeed: 0
+--- !u!4 &362430601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362430599}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4038835, y: -1.3621011, z: -0.16221446}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &402142484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 402142485}
+  m_Layer: 6
+  m_Name: Gun Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &402142485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402142484}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1840374714}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &423085032
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +428,37 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1718098760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1718098761}
+  m_Layer: 6
+  m_Name: Gun Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1718098761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718098760}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.17364816, w: 0.9848078}
+  m_LocalPosition: {x: -2, y: 1.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1840374714}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20}
 --- !u!1 &1840374712
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +472,9 @@ GameObject:
   - component: {fileID: 1840374716}
   - component: {fileID: 1840374713}
   - component: {fileID: 1840374717}
-  m_Layer: 0
+  - component: {fileID: 1840374718}
+  - component: {fileID: 1840374719}
+  m_Layer: 6
   m_Name: SpaceshipRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +548,10 @@ Transform:
   m_LocalPosition: {x: -0.13, y: -1.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1718098761}
+  - {fileID: 402142485}
+  - {fileID: 1922555508}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1041}
 --- !u!114 &1840374715
@@ -445,10 +566,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c686d86c725ad614aa322666c14bff9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidBody: {fileID: 1840374718}
   angularSpeed: 230
   acceleration: 20
   maxSpeed: 25
   drag: 0.5
+  guns:
+  - {fileID: 402142485}
   projectile: {fileID: 1231617101817725399, guid: d73d72910a22b6443af5137fde20c6cf, type: 3}
 --- !u!114 &1840374716
 MonoBehaviour:
@@ -559,6 +683,77 @@ PolygonCollider2D:
       - {x: -0.9, y: -2.06}
       - {x: -0.9, y: -1.18}
   m_UseDelaunayMesh: 0
+--- !u!50 &1840374718
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840374712}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0.5
+  m_AngularDamping: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &1840374719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840374712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928444fb68f5eba4fa309e36e944d932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHp: 100
+--- !u!1 &1922555507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1922555508}
+  m_Layer: 6
+  m_Name: Gun Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1922555508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922555507}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.17364825, w: 0.9848078}
+  m_LocalPosition: {x: 2, y: 1.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1840374714}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -20}
 --- !u!1 &1982466764
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,13 +765,14 @@ GameObject:
   - component: {fileID: 1982466766}
   - component: {fileID: 1982466765}
   - component: {fileID: 1982466767}
-  m_Layer: 0
+  - component: {fileID: 1982466768}
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1982466765
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -659,10 +855,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f40c0f089dedf9469ec7bb9c265a8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  smoothMovementTime: 1
   standingTime: 1
   shootDelay: 3
-  projectile: {fileID: 4250682923034182678, guid: d73d72910a22b6443af5137fde20c6cf, type: 3}
+  projectile: {fileID: 4250682923034182678, guid: a669c0597f353cc428bf1152cd91b3b8, type: 3}
+--- !u!114 &1982466768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982466764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928444fb68f5eba4fa309e36e944d932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHp: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -671,3 +880,4 @@ SceneRoots:
   - {fileID: 1840374714}
   - {fileID: 423085034}
   - {fileID: 1982466766}
+  - {fileID: 362430601}

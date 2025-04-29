@@ -53,26 +53,22 @@ public class Enemy : MonoBehaviour
         if (shootingTimer <= 0)
         {
             SpaceshipController player = FindAnyObjectByType<SpaceshipController>();
-            Vector3 playerPoint = player.transform.position;
-            Vector3 direction = playerPoint - transform.position;
-            float angle = Vector3.SignedAngle(direction, Vector3.up, -Vector3.forward);
-            Quaternion rotation = Quaternion.Euler(0, 0, angle);
+            if (player != null)
+            {
+                Vector3 playerPoint = player.transform.position;
+                Vector3 direction = playerPoint - transform.position;
+                float angle = Vector3.SignedAngle(direction, Vector3.up, -Vector3.forward);
+                Quaternion rotation = Quaternion.Euler(0, 0, angle);
 
-            Projectile newProjectile = Instantiate(projectile, transform.position, rotation);
+                Projectile newProjectile = Instantiate(projectile, transform.position, rotation);
+            }
             shootingTimer += shootDelay;
         }
     }
 
     void SelectRandomPoint()
     {
-        Rect cameraRect = CameraUtility.GetRect(Camera.main);
-        targetPoint = GetRandomPoint(cameraRect);
+        targetPoint = CameraUtility.GetRandomPointInCamera(Camera.main);
     }
 
-    static Vector2 GetRandomPoint(Rect rect)
-    {
-        float x = Random.Range(rect.xMin, rect.xMax);
-        float y = Random.Range(rect.yMin, rect.yMax);
-        return new(x, y);
-    }
 }
