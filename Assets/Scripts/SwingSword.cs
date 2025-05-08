@@ -7,8 +7,12 @@ public class SwingSword : MonoBehaviour
     [SerializeField, Range(0, 1)] float testPhase;
     [SerializeField, Min(0)] float animDuration = 0.5f;
     [SerializeField] Collider swordCollider;
+    [SerializeField] AudioSource swingSound;
+    [SerializeField] ParticleSystem swingVisualEffect;
 
     [SerializeField] KeyCode key = KeyCode.Space;
+
+
 
     float timer;
 
@@ -32,6 +36,8 @@ public class SwingSword : MonoBehaviour
         if (timer == 0 && Input.GetKeyDown(key))
         {
             timer = animDuration;
+            swingSound.Play();
+            swingVisualEffect.Play();
         }
 
         SetAngle(1 - (timer / animDuration));

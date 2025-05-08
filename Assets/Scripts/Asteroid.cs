@@ -23,7 +23,7 @@ public class Asteroid : MonoBehaviour
         if (collision.relativeVelocity.magnitude > minimalSpeedToDamage)  // Csúnya
         {
             if (collision.gameObject.TryGetComponent(out HealthObject_Asteroids ho))
-                ho.Damage(damage);
+                ho.Damage(Random.Range(0f, damage));
         }
     }
 

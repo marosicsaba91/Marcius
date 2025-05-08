@@ -37,7 +37,6 @@ public class AsteroidManager : MonoBehaviour
             angularSpeed = Mathf.Lerp(-maxAngularSpeed, maxAngularSpeed, angularSpeed);
 
             newAsteroid.SetVelocity(randomDir * speed, angularSpeed);
-            allAsteroids.Add(newAsteroid);
         }
         colliderTimer = colliderDelay;
         DisableColision();
@@ -70,5 +69,10 @@ public class AsteroidManager : MonoBehaviour
                 Physics2D.IgnoreCollision(c1, c2, !enable);
             }
         }
+    }
+
+    public int GetAsteroidCount()
+    {
+        return allAsteroids.Count;
     }
 }

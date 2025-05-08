@@ -6,6 +6,9 @@ public class HealthObject_Asteroids : MonoBehaviour
 
     float hp;
 
+    public float GetHP() { return hp; }
+    public float GetStartHp() { return startHp; }
+
     void Start()
     {
         hp = startHp;
@@ -19,6 +22,9 @@ public class HealthObject_Asteroids : MonoBehaviour
         hp -= damage;
 
         if (hp <= 0)
+        {
+            hp = 0;
             Destroy(gameObject);
+        }
     }
 }
